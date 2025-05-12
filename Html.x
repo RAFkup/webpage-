@@ -1,29 +1,12 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página de Ejemplo</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      font-size: 18px;
-      background-color: #f0f8ff;
-      color: #333;
-      margin: 0;
-      padding: 20px;
-    }
-    h1 {
-      color: #005f73;
-    }
-    p {
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-  <h1>Bienvenido a Mi Página</h1>
-  <p>Esta es una página de ejemplo con estilo aplicado: fuente Arial, tamaño 18px, fondo azul claro.</p>
+<?php
+$archivo = "contador.txt";
+$visitas = file_exists($archivo) ? intval(file_get_contents($archivo)) : 0;
+$visitas++;
+file_put_contents($archivo, $visitas);
+header("Location: index.html");
+exit();
+?>
+
 
                         
 
