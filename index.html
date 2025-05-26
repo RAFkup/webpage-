@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página con Botón, Contador y Fondo</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url('imagen repo.jpeg'); /* Cambia 'imagen.jpg' por la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: black; /* Ajusta el color del texto para que sea visible */
+        }
+        .boton {
+            margin-top: 20%;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: pink;
+            color: lowblue;
+            border: none;
+            cursor: pointer;
+        }
+        .contador {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="boton" onclick="window.location.href='pagina 2.html';">Ir a otra página</button>
+
+    <div class="contador">
+        <p>Visitas: <span id="visitas"></span></p>
+    </div>
+
+    <script>
+        if (!localStorage.getItem('contador')) {
+            localStorage.setItem('contador', 0);
+        }
+        let visitas = parseInt(localStorage.getItem('contador')) + 1;
+        localStorage.setItem('contador', visitas);
+        document.getElementById('visitas').innerText = visitas;
+    </script>
+
+</body>
+</html>
