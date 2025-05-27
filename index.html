@@ -33,11 +33,46 @@
     </style>
 </head>
 <body>
-<audio controls autoplay loop muted>
-  <source src=" XXXTENTACION - A la mierda el amor (Audio) (con Trippie Redd)_1721713901865.mp3" type="audio/mpeg">
-  Tu navegador no soporta la reproducción de audio.
+
+<audio controls id="music">
+
+<source src="XXXTENTACION - A la mierda el amor (Audio) (con Trippie Redd)_1721713901865.mp3" type="audio/mpeg">
+
+Your browser does not support the audio element.
+
 </audio>
-        
+
+ 
+
+<p>Click the buttons to play or pause the music.</p>
+
+ 
+
+<button onclick="play()" type="button">Play </button>
+
+<button onclick="pause()" type="button">Pause</button>
+
+ 
+
+<script>
+
+var myMusic= document.getElementById("music");
+
+function play() {
+
+myMusic.play();
+
+}
+
+ 
+
+function pause() {
+
+myMusic.pause();
+
+}
+
+</script>
     <button class="boton" onclick="window.location.href='pagina 2.html';">Ir a otra página</button>
 
     <div class="contador">
