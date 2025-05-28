@@ -1,60 +1,95 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRACTICA 1 RAFAEL</title>
+    <title>Página con Botón, Contador y Fondo</title>
     <style>
         body {
-            background-color: Red; /* Cambia el color aquí */
+
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-image: url('imagen'); /* Cambia 'imagen.jpg' por la ruta de tu imagen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: black; /* Ajusta el color del texto para que sea visible */
+        }
+        .boton {
+            margin-top: 20%;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: pink;
+            color: lowblue;
+            border: none;
+            cursor: pointer;
+        }
+        .contador {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
         }
     </style>
-  <title>practica 1</title>
 </head>
 <body>
 
+<audio controls id="music">
 
+<source src="XXXTENTACION - A la mierda el amor (Audio) (con Trippie Redd)_1721713901865.mp3" type="audio/mpeg">
 
-  <h1>bienvenidos a mi pagina</h1>
+Your browser does not support the audio element.
 
-  <table>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-    </tr>
-    <tr>
-      <td>rafael</td>
-      <td>santos</td>
-    </tr>
+</audio>
 
-  </table>
+ 
 
-  <style>
-        .boton {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            text-align: center;
-            cursor: pointer;
+<p>Click the buttons to play or pause the music.</p>
+
+ 
+
+<button onclick="play()" type="button">Play </button>
+
+<button onclick="pause()" type="button">Pause</button>
+
+ 
+
+<script>
+
+var myMusic= document.getElementById("music");
+
+function play() {
+
+myMusic.play();
+
+}
+
+ 
+
+function pause() {
+
+myMusic.pause();
+
+}
+
+</script>
+    <button class="boton" onclick="window.location.href='pagina 2.html';">Ir a otra página</button>
+
+    <div class="contador">
+        <p>Visitas: <span id="visitas"></span></p>
+    </div>
+
+    <script>
+        if (!localStorage.getItem('contador')) {
+            localStorage.setItem('contador', 0);
         }
-
-        .boton:hover {
-            background-color: #0056b3;
-        }
-    </style>
-        </section></p>
-    </main>
-   
+        let visitas = parseInt(localStorage.getItem('contador')) + 1;
+        localStorage.setItem('contador', visitas);
+        document.getElementById('visitas').innerText = visitas;
     </script>
+
 </body>
-
 </html>
-
 
 
 .
