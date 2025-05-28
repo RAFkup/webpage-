@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página con Música de Fondo</title>
+</head>
+<body>
+  <h1>Bienvenido a mi página</h1>
+  
+  <!-- Contenedor del reproductor (opcional oculto) -->
+  <audio id="musicaFondo" src="musica.mp3" loop></audio>
+  
+  <button onclick="playMusic()">Reproducir música</button>
+  <button onclick="pauseMusic()">Pausar música</button>
+</body>
 
+<script>
+  const audio = document.getElementById('musicaFondo');
+
+  // Función para reproducir
+  function playMusic() {
+    audio.play();
+  }
+
+  // Función para pausar
+  function pauseMusic() {
+    audio.pause();
+  }
+</script>
+</html>
